@@ -2,7 +2,7 @@ import json
 import Players
 import random
 
-players = [Players.FirstHalfPlayer(),Players.SecondHalfPlayer()]
+players = [Players.AggressivePlayer(),Players.FirstHalfPlayer()]
 propertiesRaw = open("properties.json")
 properties = json.load(propertiesRaw)
 properties = properties["cards"]

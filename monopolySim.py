@@ -4,7 +4,7 @@ import sys
 
 winners = {}
 
-for i in range(0,100):
+for i in range(0,50):
     import monopoly
     winner = monopoly.playGame()
     if winner in winners:

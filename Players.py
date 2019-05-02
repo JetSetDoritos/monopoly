@@ -1,7 +1,7 @@
 from random import randint
 
 class Player:
-    money = 200
+    money = 1500
     houses = 0
     inJail = False
     turnsInJail = 0
