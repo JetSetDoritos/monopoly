@@ -2,7 +2,7 @@ import json
 import Players
 import random
 
-players = [Players.AggressivePlayer(),Players.FirstHalfPlayer()]
+#players = [Players.SecondHalfPlayer(),Players.AggressivePlayer()]
 propertiesRaw = open("properties.json")
 properties = json.load(propertiesRaw)
 properties = properties["cards"]
@@ -49,9 +49,21 @@ def ownedRowSpaces(p):
     return completeProperties
 
 
-def playGame():
+def playGame(playersInit):
     global gameActive
     global turnNumber
+    players = []
+    for p in playersInit:
+        if p == "1":
+            players.append(Players.AggressivePlayer())
+        elif p == "2":
+            players.append(Players.FirstHalfPlayer())
+        elif p == "3":
+            players.append(Players.SecondHalfPlayer())
+        elif p == "4":
+            players.append(Players.RandomPlayer())
+
+    
     winner = ""
     while(gameActive):
         turnNumber+=1
